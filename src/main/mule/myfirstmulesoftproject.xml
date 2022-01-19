@@ -5,10 +5,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="ad3fd1bb-8114-4423-87be-d33206f1922e" >
-		<http:listener-connection host="0.0.0.0" port="8085" />
+		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
 	<flow name="myfirstmulesoftprojectFlow" doc:id="1a8989ce-8460-401a-b278-3d0bce4da3e1" >
 		<http:listener doc:name="Listener" doc:id="b6a01b4a-cb28-455e-9afb-860f23b0dd6a" config-ref="HTTP_Listener_config" path="/git"/>
 		<logger level="INFO" doc:name="Logger" doc:id="fa74d78a-a556-4a9a-bdce-fde128842290" message="Logger"/>
+		<logger level="INFO" doc:name="Logger" doc:id="27d90385-6723-468f-b547-04905b646e07" message="#[payload]"/>
 	</flow>
 </mule>
